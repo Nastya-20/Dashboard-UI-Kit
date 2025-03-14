@@ -1,0 +1,45 @@
+@use '../utils/variables' as var;
+
+$fonts: var.$font-weights;
+
+@each $key, $value in $fonts {
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('../../fonts/Montserrat-#{$key}.woff2') format('woff2'),
+        url('../../fonts/Montserrat-#{$key}.woff') format(' woff');
+        font-weight: $value;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+
+
+//  Перелік розмірів шрифту
+// $font-sizes: (
+//     "0": 0,
+//     xxs: $fs-xxs,
+//     xs: $fs-xs,
+//     s: $fs-s,
+//     m: $fs-m,
+//     l: $fs-l,
+//     xl: $fs-xl,
+//     xxl: $fs-xxl
+// );
+
+// // Перебираємо мапу розмірів
+// @each $size, $factor in $font-sizes {
+//     .fs-#{$size} {
+//         font-size: $factor;
+//     }
+// }
+
+// // Перелік варіантів товщини накреслення
+// $weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+
+// // Перебираємо список накреслень тексту
+// @each $w in $weight {
+//     .fw-#{$w} {
+//         font-weight: $w;
+//     }
+// }
